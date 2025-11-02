@@ -11,6 +11,21 @@ public class EnvioBuilder {
     private Pago pago;
     private String serviciosAdicionales;
 
+    public EnvioBuilder() {
+        reset();
+    }
+
+    public void reset() {
+        idEnvio = 0;
+        origen = "";
+        peso = 0;
+        prioridad = false;
+        dimension = null;
+        usuario = null;
+        repartidor = null;
+        pago = null;
+        serviciosAdicionales = "";
+    }
     public EnvioBuilder setIdEnvio(int idEnvio) {
         this.idEnvio = idEnvio;
         return this;
@@ -62,6 +77,13 @@ public class EnvioBuilder {
         envio.setRepartidor(repartidor);
         envio.setPago(pago);
         envio.setServiciosAdicionales(serviciosAdicionales);
+
+        // Se calcula el costo al crear
+        double costo = envio.calcularCosto();
+        envio.setCostoTotal(costo);
+
+        // Opcional: restaurar el builder para nuevo uso
+        reset();
         return envio;
     }
 }

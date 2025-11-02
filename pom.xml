@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                co.edu.uniquindio.enviospepepicapapas/co.edu.uniquindio.enviospepepicapapas.HelloApplication
+                                co.edu.uniquindio.enviospepepicapapas/co.edu.uniquindio.enviospepepicapapas.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

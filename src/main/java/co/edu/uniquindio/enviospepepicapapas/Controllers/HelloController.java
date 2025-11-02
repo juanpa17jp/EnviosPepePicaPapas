@@ -1,4 +1,4 @@
-package co.edu.uniquindio.enviospepepicapapas;
+package co.edu.uniquindio.enviospepepicapapas.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
