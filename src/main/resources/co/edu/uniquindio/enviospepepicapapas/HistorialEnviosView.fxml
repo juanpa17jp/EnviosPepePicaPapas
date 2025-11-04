@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
+<BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="co.edu.uniquindio.enviospepepicapapas.Controllers.HistorialEnvioController"
+            prefHeight="600.0" prefWidth="900.0"
+            style="-fx-background-color: #000000;">
 
-</AnchorPane>
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20.0"
+              style="-fx-background-color: #FFD700; -fx-padding: 15;">
+            <Button text="Volver" onAction="#onVolverMenu"
+                    style="-fx-background-color: #000000; -fx-text-fill: #FFD700; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="RAPILANDIA EXPRESS" style="-fx-text-fill: #000000; -fx-font-weight: bold;">
+                <font><Font name="System Bold" size="26.0"/></font>
+            </Label>
+        </HBox>
+    </top>
+
+    <!-- Center -->
+    <center>
+        <VBox spacing="16.0" alignment="CENTER">
+            <padding><Insets top="24.0" right="24.0" bottom="24.0" left="24.0"/></padding>
+
+            <Label text="Historial de Envíos" style="-fx-text-fill: #FFD700;">
+                <font><Font size="20.0"/></font>
+            </Label>
+
+            <TableView fx:id="tablaEnvios"
+                       prefHeight="360.0"
+                       style="-fx-background-color: #111111; -fx-background-radius: 10;">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="140.0"/>
+                    <TableColumn fx:id="colOrigen" text="Origen" prefWidth="240.0"/>
+                    <TableColumn fx:id="colPeso" text="Peso (kg)" prefWidth="120.0"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="160.0"/>
+                    <TableColumn fx:id="colCosto" text="Costo ($)" prefWidth="160.0"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="12.0" alignment="CENTER">
+                <Label text="Nuevo estado:" style="-fx-text-fill: #FFD700;"/>
+                <ComboBox fx:id="cbEstado"
+                          promptText="Selecciona estado"
+                          style="-fx-background-radius: 8; -fx-background-color: #1A1A1A; -fx-text-fill: #FFD700; -fx-mark-color: #FFD700;"/>
+                <Button text="🔄 Actualizar estado" onAction="#onActualizarEstado"
+                        prefWidth="200.0" prefHeight="40.0"
+                        style="-fx-background-color: #FFD700; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+                <Button text="🔍 Ver detalle" onAction="#onVerDetalle"
+                        prefWidth="160.0" prefHeight="40.0"
+                        style="-fx-background-color: #FFD700; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+            </HBox>
+
+            <Label fx:id="lblInfo" text="—" style="-fx-text-fill: #FFD700;"/>
+        </VBox>
+    </center>
+
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #1A1A1A; -fx-padding: 15;">
+            <Label text="© 2024 Rapilandia Express" style="-fx-text-fill: #FFD700;"/>
+            <Separator orientation="VERTICAL" prefHeight="20.0"/>
+            <Label text="Historial Envíos v1.2" style="-fx-text-fill: #FFD700;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
