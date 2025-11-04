@@ -7,31 +7,27 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Main {
+public class Main extends Application {
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("AppView.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            stage.setTitle("Rapilandia Express - Sistema de Gestión");
+            stage.setScene(scene);
+            stage.show();
+
+            System.out.println("Aplicación iniciada correctamente");
+
+        } catch (IOException e) {
+            System.err.println("Error al cargar FXML: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
     public static void main(String[] args) {
-        Rapilandia empresa = new Rapilandia("Rapilandia Express");
-
-        // Crear usuario (Prototype)
-        Usuario cliente = new Usuario() {}; // o subclase
-        cliente.setNombre("Vicen");
-        empresa.registrarUsuario(cliente);
-
-        // Crear envío con Builder
-        EnvioBuilder builder = new EnvioBuilder()
-                .setIdEnvio(101)
-                .setOrigen("Cali")
-                .setPeso(3.5)
-                .setPrioridad(true)
-                .setDimension(new Dimension(1.2, 0.8, 0.6))
-                .setUsuario(cliente);
-
-        // Registrar envío con estrategia de peso
-        Envio envio = empresa.registrarEnvio(builder, new PesoStrategy());
-
-        // Procesar pago
-        empresa.procesarPago(envio, new PagoEfectivo());
-
-        // Enviar notificación
-        empresa.notificarEnvio(envio, new EmailSender(), "cliente@correo.com");
+        launch(args);
     }
 }
