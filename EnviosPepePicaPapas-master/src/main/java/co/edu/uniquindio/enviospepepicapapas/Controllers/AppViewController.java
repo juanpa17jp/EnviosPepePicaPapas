@@ -52,7 +52,7 @@ public class AppViewController {
 
     @FXML
     public void onGestionUsuarios(ActionEvent event) {
-        System.out.println("Botón Registrar Usuario presionado");
+        System.out.println("Botón Registrar Usuario presionado ok");
         try {
             cargarVista("/co/edu/uniquindio/enviospepepicapapas/UsuarioView.fxml", "Registrar Nuevo Usuario");
         } catch (IOException e) {
