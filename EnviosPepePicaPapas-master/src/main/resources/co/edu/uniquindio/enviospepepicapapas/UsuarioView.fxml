@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.enviospepepicapapas.Controllers.UsuarioController">
+
+    <top>
+        <BorderPane style="-fx-background-color: #FFD700; -fx-padding: 20;">
+            <left>
+                <Button fx:id="btnVolver" onAction="#onVolver"
+                        text="Volver"
+                        style="-fx-background-color: #000000; -fx-text-fill: #FFD700; -fx-font-weight: bold; -fx-background-radius: 5;" />
+            </left>
+            <center>
+                <Label text="RAPILANDIA EXPRESS"
+                       style="-fx-text-fill: #000000; -fx-font-weight: bold;">
+                    <font><Font name="System Bold" size="28.0" /></font>
+                </Label>
+            </center>
+        </BorderPane>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="24.0">
+            <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0" /></padding>
+
+            <Label style="-fx-text-fill: #FFD700;" text="Usuario · Gestión">
+                <font><Font size="20.0" /></font>
+            </Label>
+
+            <GridPane hgap="16.0" style="-fx-background-color: #111111; -fx-background-radius: 10; -fx-padding: 24;" vgap="14.0">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="150" />
+                    <ColumnConstraints halignment="LEFT" minWidth="300" />
+                </columnConstraints>
+
+                <Label style="-fx-text-fill: #FFD700;" text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="txtNombre" promptText="Nombre completo" style="-fx-background-radius: 8; -fx-text-fill: #FFD700; -fx-background-color: #1A1A1A; -fx-prompt-text-fill: #8c8c8c;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label style="-fx-text-fill: #FFD700;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="txtEmail" promptText="correo@dominio.com" style="-fx-background-radius: 8; -fx-text-fill: #FFD700; -fx-background-color: #1A1A1A; -fx-prompt-text-fill: #8c8c8c;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label style="-fx-text-fill: #FFD700;" text="Tipo:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <ComboBox fx:id="cbTipo" promptText="Selecciona un tipo" style="-fx-background-radius: 8; -fx-background-color: #1A1A1A; -fx-mark-color: #FFD700; -fx-text-fill: #FFD700;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <HBox alignment="CENTER" spacing="14.0">
+                <Button onAction="#onGuardar" prefHeight="44.0" prefWidth="160.0" style="-fx-background-color: #FFD700; -fx-text-fill: #000000; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 10;" text="💾 Guardar" />
+                <Button onAction="#onDuplicarUsuario" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #FFD700; -fx-text-fill: #000000; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 10;" text="🧬 Duplicar usuario" />
+                <Button onAction="#onCancelar" prefHeight="44.0" prefWidth="160.0" style="-fx-background-color: #FFD700; -fx-text-fill: #000000; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 10;" text="↩ Cancelar" />
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #1A1A1A; -fx-padding: 15;">
+            <Label style="-fx-text-fill: #FFD700;" text="© 2024 Rapilandia Express">
+                <font><Font size="12.0" /></font>
+            </Label>
+            <Separator orientation="VERTICAL" prefHeight="20.0" />
+            <Label style="-fx-text-fill: #FFD700;" text="Usuario View v1.0">
+                <font><Font size="12.0" /></font>
+            </Label>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.enviospepepicapapas.Controllers.NotificacionController">
+
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #FFD700; -fx-padding: 15;">
+            <Button fx:id="btnVolver" onAction="#onVolver" style="-fx-background-color: #000000; -fx-text-fill: #FFD700; -fx-font-weight: bold; -fx-background-radius: 10;" text="Volver" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-text-fill: #000000; -fx-font-weight: bold;" text="RAPILANDIA EXPRESS">
+                <font><Font name="System Bold" size="26.0" /></font>
+            </Label>
+        </HBox>
+    </top>
+
+    <!-- Center -->
+    <center>
+        <VBox alignment="CENTER" spacing="24.0">
+            <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0" /></padding>
+
+            <Label style="-fx-text-fill: #FFD700;" text="Notificaciones de Envío">
+                <font><Font size="20.0" /></font>
+            </Label>
+
+            <GridPane hgap="16.0" style="-fx-background-color: #111111; -fx-background-radius: 10; -fx-padding: 24;" vgap="14.0">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="160" />
+                    <ColumnConstraints halignment="LEFT" minWidth="360" />
+                </columnConstraints>
+
+                <Label style="-fx-text-fill: #FFD700;" text="Mensaje:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="txtMensaje" promptText="Escribe el mensaje" style="-fx-background-radius: 8; -fx-text-fill: #FFD700; -fx-background-color: #1A1A1A;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label style="-fx-text-fill: #FFD700;" text="Canal:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cbCanal" promptText="Selecciona canal" style="-fx-background-radius: 8; -fx-background-color: #1A1A1A; -fx-mark-color: #FFD700; -fx-text-fill: #FFD700;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <HBox alignment="CENTER" spacing="14.0">
+                <Button onAction="#onEnviar" prefHeight="44.0" prefWidth="180.0" style="-fx-background-color: #FFD700; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-background-radius: 10;" text="📨 Enviar" />
+                <Label fx:id="lblResultado" style="-fx-text-fill: #FFD700; -fx-font-size: 14px;" text="Estado: —" />
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #1A1A1A; -fx-padding: 15;">
+            <Label style="-fx-text-fill: #FFD700;" text="© 2024 Rapilandia Express" />
+            <Separator orientation="VERTICAL" prefHeight="20.0" />
+            <Label style="-fx-text-fill: #FFD700;" text="Notificación v1.2" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
