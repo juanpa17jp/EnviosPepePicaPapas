@@ -19,7 +19,7 @@ public class NotificacionController {
 
     @FXML
     public void initialize() {
-        empresa = new Rapilandia("Rapilandia Express");
+        empresa = new Rapilandia("Rapilandia Express ok");
 
         // Cargar los canales disponibles (implementaciones del Bridge)
         cbCanal.setItems(FXCollections.observableArrayList("Email", "SMS"));

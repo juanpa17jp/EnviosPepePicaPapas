@@ -41,7 +41,7 @@ public class PagoViewController {
 
     @FXML
     public void initialize() {
-        empresa = new Rapilandia("Rapilandia Express");
+        empresa = new Rapilandia("Rapilandia Express ok");
 
         // Configurar ToggleGroup
         metodoPago = new ToggleGroup();

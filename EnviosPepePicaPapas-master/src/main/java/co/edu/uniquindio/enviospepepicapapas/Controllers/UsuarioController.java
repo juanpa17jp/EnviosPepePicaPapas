@@ -23,7 +23,7 @@ public class UsuarioController {
     // Inicialización automática del FXML
     @FXML
     public void initialize() {
-        empresa = new Rapilandia("Rapilandia Express");
+        empresa = new Rapilandia("Rapilandia Express ok");
 
         // Cargar tipos de usuario
         cbTipo.getItems().addAll("Cliente", "Repartidor", "Administrador");

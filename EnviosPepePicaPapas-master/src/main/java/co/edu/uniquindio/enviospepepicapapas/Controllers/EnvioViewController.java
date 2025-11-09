@@ -30,7 +30,7 @@ public class EnvioViewController {
         empresa = new Rapilandia("Rapilandia Express");
 
         // Cargar opciones del ComboBox
-        cmbEstrategia.getItems().addAll("Por Peso", "Por Volumen");
+        cmbEstrategia.getItems().addAll("Por Peso", "Por Volumen ok");
         cmbEstrategia.setValue("Por Peso");
 
         // Listeners para calcular volumen automáticamente

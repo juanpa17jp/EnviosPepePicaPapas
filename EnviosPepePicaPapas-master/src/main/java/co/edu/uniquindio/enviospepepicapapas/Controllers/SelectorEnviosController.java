@@ -28,7 +28,7 @@ public class SelectorEnviosController {
 
     @FXML
     public void initialize() {
-        empresa = new Rapilandia("Rapilandia Express");
+        empresa = new Rapilandia("Rapilandia Express ok");
 
         // Configurar columnas de la tabla
         colId.setCellValueFactory(new PropertyValueFactory<>("idEnvio"));
